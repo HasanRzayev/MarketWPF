@@ -94,14 +94,24 @@ namespace MarketWPF
             products.Add(new Product("Water", 7.5, 10, "https://camzies.com.ng/wp-content/uploads/2016/09/45.jpg"));
             products.Add(new Product("Snickers", 7.5, 10, "https://cocoaffaire.com/wp-content/uploads/2021/11/SNICKERS-SINGLE-50-GM.jpg"));
             products.Add(new Product("Bounty", 7.5, 10, "https://nordicexpatshop.com/media/catalog/product/cache/a75b4628650e2182ad447c229a356118/b/o/bounty-candy-bar-57gr.jpeg"));
-            products.Add(new Product("Mars", 7.5, 10, "https://camzies.com.ng/wp-content/uploads/2016/09/45.jpg"));
-            products.Add(new Product("Twis", 7.5, 10, "https://camzies.com.ng/wp-content/uploads/2016/09/45.jpg"));
-            products.Add(new Product("7Days", 7.5, 10, "https://camzies.com.ng/wp-content/uploads/2016/09/45.jpg"));
-            products.Add(new Product("", 7.5, 10, "https://camzies.com.ng/wp-content/uploads/2016/09/45.jpg"));
-            products.Add(new Product("", 7.5, 10, "https://camzies.com.ng/wp-content/uploads/2016/09/45.jpg"));
-            products.Add(new Product("", 7.5, 10, "https://camzies.com.ng/wp-content/uploads/2016/09/45.jpg"));
-            products.Add(new Product("", 7.5, 10, "https://camzies.com.ng/wp-content/uploads/2016/09/45.jpg"));
-            products.Add(new Product("", 7.5, 10, "https://camzies.com.ng/wp-content/uploads/2016/09/45.jpg"));
+            products.Add(new Product("Mars", 7.5, 10, "https://cocoaffaire.com/wp-content/uploads/2021/10/Mars-51gm-600x600-1.png"));
+            products.Add(new Product("Twis", 7.5, 10, "https://m.media-amazon.com/images/I/4192VyvQjcL.jpg"));
+            products.Add(new Product("7Days", 7.5, 10, "https://m.media-amazon.com/images/I/81fFfDD9adL._SL1500_.jpg"));
+            products.Add(new Product("Lays-Klassic", 7.5, 10, "https://cdn1.ozone.ru/s3/multimedia-9/c1200/6255833361.jpg"));
+            products.Add(new Product("Lays", 7.5, 10, "https://strgimgr.umico.az/sized/840/144094-011dc1e9f99b0453c39ce0b7212c0535.jpg"));
+            products.Add(new Product("Lays-Barbecue", 7.5, 10, "https://i.ebayimg.com/thumbs/images/g/N~kAAOSwGHFhWI19/s-l300.jpg"));
+            products.Add(new Product("DORITOS® Salsa Verde Flavored Tortilla Chips", 7.5, 10, "https://www.doritos.com/sites/doritos.com/files/styles/product_thumbnail/public/2018-08/new-salsa-verde.png?itok=1eYqxntK"));
+            products.Add(new Product("DORITOS® Nacho Cheese Flavored Tortilla Chips", 7.5, 10, "https://www.doritos.com/sites/doritos.com/files/2018-08/new-nacho-cheese.png"));
+            products.Add(new Product("DORITOS® FLAMIN' HOT® Nacho Flavored Tortilla Chips", 7.5, 10, "https://www.doritos.com/sites/doritos.com/files/2019-01/Doritos%20FHN%20XXL.png"));
+
+            products.Add(new Product("PRINGLES® ORIGINAL CRISPS", 7.5, 10, "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pringles-template-original-1546635620.jpg?crop=1xw:1xh;center,top&resize=768:*"));
+
+            products.Add(new Product("PRINGLES® CHEDDAR & SOUR CREAM CRISPS", 7.5, 10, "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pringles-template-cheddarsourcream-1546635618.jpg?crop=1xw:1xh;center,top&resize=768:*"));
+
+            products.Add(new Product("PRINGLES® PIZZA CRISPS", 7.5, 10, "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pringles-template-pizza-1546635620.jpg?crop=1xw:1xh;center,top&resize=768:*"));
+
+            products.Add(new Product("PRINGLES® ROTISSERIE CHICKEN CRISPS", 7.5, 10, "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pringles-template-nashvillehc-1546635620.jpg?crop=1xw:1xh;center,top&resize=768:*"));
+
             stand.ItemsSource = products;
             DataContext = this;
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(stand.ItemsSource);
