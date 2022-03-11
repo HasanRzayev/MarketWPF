@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketWPF", "MarketWPF\MarketWPF.csproj", "{20CE342B-0CE2-4929-A332-3AB9C5DDA116}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20CE342B-0CE2-4929-A332-3AB9C5DDA116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20CE342B-0CE2-4929-A332-3AB9C5DDA116}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20CE342B-0CE2-4929-A332-3AB9C5DDA116}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20CE342B-0CE2-4929-A332-3AB9C5DDA116}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92C8BFA2-DDA7-4361-AE7E-3788D026F6A9}
+	EndGlobalSection
+EndGlobal
