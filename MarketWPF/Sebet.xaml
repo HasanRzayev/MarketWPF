@@ -11,15 +11,33 @@
      TextOptions.TextFormattingMode="Ideal"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
      TextOptions.TextRenderingMode="Auto"
-        Title="Sebet" Height="900" Width="1000">
+        Title="Sebet" Height="900" Width="1000" MouseMove="Window_MouseMove" >
+    <Window.Resources>
+        <Style TargetType="ListBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBox">
+                        <Border CornerRadius="5" Background="{TemplateBinding ListBox.Background}">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                <WrapPanel Width="1200" Orientation="Vertical"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       IsItemsHost="True"/>
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="8*"></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label FontSize="30" Content="SEBET"></Label>
-        <ListBox  Grid.Row="1"   ScrollViewer.VerticalScrollBarVisibility="Hidden">>
+        <Label  Grid.Row="0" HorizontalAlignment="Stretch"  Background="#F1E0AC" FontSize="30" HorizontalContentAlignment="Center" Content="SEBET"></Label>
+        <ListBox  Background="#495371"  Grid.Row="1"   ScrollViewer.VerticalScrollBarVisibility="Hidden">>
 
             <ItemsControl  Name="stand" ItemsSource="{Binding Basket}">
 
@@ -31,7 +49,7 @@
                 <ItemsControl.ItemTemplate>
 
                     <DataTemplate>
-                        <Button  Height="350" >
+                        <Button  Height="350"  Background="#495371">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition  Height="1*"  ></RowDefinition>
@@ -56,7 +74,7 @@
                                             <ColumnDefinition></ColumnDefinition>
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
-                                        <Button Grid.Column="0" Background="red" Name="sebetminus" Click="sebetminus_Click" Tag="{Binding Name, UpdateSourceTrigger=PropertyChanged}"   
+                                        <Button Grid.Column="0" Background="#74959A" Name="sebetminus" Click="sebetminus_Click" Tag="{Binding Name, UpdateSourceTrigger=PropertyChanged}"   
                                  
   Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
   ToolTip="MaterialDesignFloatingActionDarkButton"
@@ -64,7 +82,7 @@
                                             <materialDesign:PackIcon Kind="CartMinus" />
 
                                         </Button>
-                                        <Button Grid.Column="1" Background="red" Name="sebetdelete" Click="sebetdelete_Click" Tag="{Binding Name, UpdateSourceTrigger=PropertyChanged}"   
+                                        <Button Grid.Column="1" Background="#74959A" Name="sebetdelete" Click="sebetdelete_Click" Tag="{Binding Name, UpdateSourceTrigger=PropertyChanged}"   
                                  
   Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
   ToolTip="MaterialDesignFloatingActionDarkButton"
@@ -80,7 +98,7 @@
                                         </Grid.ColumnDefinitions>
 
 
-                                        <Button Grid.Column="0" Background="red" Name="sebetplus" Click="sebetplus_Click"  Tag="{Binding Name, UpdateSourceTrigger=PropertyChanged}"   
+                                        <Button Grid.Column="0" Background="#74959A" Name="sebetplus" Click="sebetplus_Click"  Tag="{Binding Name, UpdateSourceTrigger=PropertyChanged}"   
                                  
   Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
   ToolTip="MaterialDesignFloatingActionDarkButton"
@@ -88,11 +106,21 @@
                                             <materialDesign:PackIcon Kind="CartPlus" />
 
                                         </Button>
-                                        <Label Grid.Column="1" Background="red"  Name="Label_Count"  Content="{Binding Count , UpdateSourceTrigger=PropertyChanged}" 
+                                        <Border Grid.Column="1" CornerRadius="50"
+                                     
+                                             Height="50"
+                                             Margin="10"
+                                             Padding="20,10,0,0"
+                                             Background="#74959A"
+                                             BorderBrush="Black"
+                                             BorderThickness="1">
+                                            <TextBlock   Name="Label_Count"  Text="{Binding Count , UpdateSourceTrigger=PropertyChanged}" 
 >
 
 
-                                        </Label>
+                                            </TextBlock>
+                                        </Border>
+                                        
                                     </Grid>
 
                                 </Grid>
@@ -104,7 +132,26 @@
        
 
         </ListBox>
+        <Grid Grid.Row="2" Background="#F1E0AC">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label  HorizontalContentAlignment="Center" HorizontalAlignment="Center" FontSize="75" Background="#495371" Grid.Column="0" Name="umumiqiymet" Content="{Binding Umumi,UpdateSourceTrigger=PropertyChanged}" ></Label>
 
+            <Grid Grid.Column="1"
+ >
+                <Button  Click="Button_Click" Background="#495371"
+    Style="{StaticResource MaterialDesignRaisedDarkButton}"
 
+    materialDesign:ButtonAssist.CornerRadius="25"
+    ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                    <TextBlock
+      Text="Al" />
+                </Button>
+            </Grid>
+        
+        </Grid>
     </Grid>
 </Window>

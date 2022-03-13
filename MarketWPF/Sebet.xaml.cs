@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
+using System.Media;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +45,15 @@ namespace MarketWPF
                 OnPropertyChanged();
             }
         }
+
+        private double umumi;
+
+        public double Umumi
+        {
+            get { return umumi; }
+            set { umumi = value; }
+        }
+
 
         public Sebet()
         {
@@ -143,6 +155,28 @@ namespace MarketWPF
                 }
                 
             }
+        }
+
+        private void Window_MouseMove(object sender, MouseEventArgs e)
+        {
+
+            double lazim = 0;
+            foreach (var item in sebet)
+            {
+                lazim += ((item as Product).Money * (item as Product).Count);
+            }
+            umumi = lazim;
+            umumiqiymet.Content = lazim.ToString();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+          
+            sebet.Clear ();
+            umumiqiymet.Content ="0";
+
+            var producs = JsonConvert.SerializeObject(products, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText("baza.json", producs);
         }
     }
 }

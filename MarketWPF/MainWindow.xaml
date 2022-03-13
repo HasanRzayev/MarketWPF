@@ -13,7 +13,7 @@
      TextOptions.TextRenderingMode="Auto"
 
      FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow" Height="900" Width="1200" Background="#FFC069">
+        Title="MainWindow" Height="900" Width="1200" Background="#98B4AA" MouseMove="Window_MouseMove">
     <Window.Resources>
         <Style TargetType="ListBox">
             <Setter Property="Template">
@@ -52,21 +52,21 @@
 
                     <DataTemplate>
 
-                        <Button  Height="600" Background="#4A403A"    >
+                        <Button  Height="500" Background="#495371"    >
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition   ></RowDefinition>
-                                    <RowDefinition Height="19*"  ></RowDefinition>
-                                    <RowDefinition Height="5*"  ></RowDefinition>
+                                    <RowDefinition Height="3*"   ></RowDefinition>
+                                    <RowDefinition Height="25*"  ></RowDefinition>
+                                    <RowDefinition Height="10*"  ></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <Label HorizontalAlignment="Center" Grid.Row="0" Content="{Binding Name, UpdateSourceTrigger=PropertyChanged}"></Label>
-                                <Label Grid.Row="1" Width="150" Height="200">
+                                <Label  FontFamily="Candara" FontSize="18" HorizontalContentAlignment="Center" Grid.Row="0" Content="{Binding Name, UpdateSourceTrigger=PropertyChanged}"></Label>
+                                <Label Grid.Row="1" Width="200" >
                                     <Image Source="{Binding imageurl}"></Image>
                                 </Label>
-                                <Grid Grid.Row="2">
+                                <Grid Grid.Row="2" >
                                     <Grid.RowDefinitions>
-                                        <RowDefinition></RowDefinition>
-                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition Height="100*" ></RowDefinition>
+                                        <RowDefinition Height="100*"></RowDefinition>
                                       
                                        
                                     </Grid.RowDefinitions>
@@ -76,20 +76,20 @@
                                         
                                             <RowDefinition></RowDefinition>
                                         </Grid.RowDefinitions>
-                                        <Label Grid.Row="0" Background="#A45D5D"  Name="Label_Count"  Content="{Binding Count , UpdateSourceTrigger=PropertyChanged}" 
+                                        <Label Grid.Row="0" Background="#74959A"  Name="Label_Count"  Content="{Binding Count , UpdateSourceTrigger=PropertyChanged}" 
 >
 
 
                                         </Label>
                                     </Grid>
-                                    <Grid Grid.Row="1">
+                                    <Grid Grid.Row="1" >
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition ></ColumnDefinition>
+                                            <ColumnDefinition  ></ColumnDefinition>
                                             <ColumnDefinition ></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
 
 
-                                        <Button Grid.Column="0" Background="#A45D5D" Click="Button_Click" Tag="{Binding Name, UpdateSourceTrigger=PropertyChanged}"   
+                                        <Button HorizontalAlignment="Center" Grid.Column="0" Background="#74959A" Click="Button_Click" Tag="{Binding Name, UpdateSourceTrigger=PropertyChanged}"   
                                  
   Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
   ToolTip="MaterialDesignFloatingActionDarkButton"
@@ -97,7 +97,7 @@
                                             <materialDesign:PackIcon Kind="CartPlus" />
 
                                         </Button>
-                                        <Button Grid.Column="1" Background="#A45D5D" Name="edit"   Click="edit_Click"   Tag="{Binding Name, UpdateSourceTrigger=PropertyChanged}" 
+                                        <Button HorizontalAlignment="Center" Grid.Column="1" Background="#74959A" Name="edit"   Click="edit_Click"   Tag="{Binding Name, UpdateSourceTrigger=PropertyChanged}" 
                                  
   Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
   ToolTip="MaterialDesignFloatingActionDarkButton"
@@ -123,7 +123,7 @@
                 <ColumnDefinition Width="2*"></ColumnDefinition>
                 <ColumnDefinition Width="4*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Background="#EFEFEF"  Foreground="#A45D5D"  Click="btn_sebet_Click" Name="btn_sebet" HorizontalAlignment="Left"
+            <Button Grid.Column="0" Background="#EFEFEF"  Foreground="#74959A"  Click="btn_sebet_Click" Name="btn_sebet" HorizontalAlignment="Left"
                                                   
   Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
   ToolTip="MaterialDesignFloatingActionDarkButton"
@@ -133,7 +133,7 @@
 
             </Button>
             <TextBox Grid.Column="1" Name="textbox_serach" BorderThickness="5" FontSize="20" TextChanged="TextBox_TextChanged"></TextBox>
-            <Button Grid.Column="2" Background="#EFEFEF"  Foreground="#A45D5D"  HorizontalAlignment="Left"
+            <Button Grid.Column="2" Background="#F1E0AC"  Foreground="#74959A"  HorizontalAlignment="Left"
                                                   
   Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
   ToolTip="MaterialDesignFloatingActionDarkButton"
@@ -142,7 +142,7 @@
 
 
             </Button>
-            <Button Grid.Column="3" Name="Addproduct" Background="#EFEFEF" Foreground="#A45D5D" HorizontalAlignment="Right"  Click="Addproduct_Click"
+            <Button Grid.Column="3" Name="Addproduct" Background="#F1E0AC" Foreground="#74959A" HorizontalAlignment="Right"  Click="Addproduct_Click"
                                                   
   Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
   ToolTip="MaterialDesignFloatingActionDarkButton"

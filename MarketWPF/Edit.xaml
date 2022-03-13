@@ -5,14 +5,76 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MarketWPF"
         mc:Ignorable="d"
-        Title="Edit" Height="600" Width="800" Loaded="Window_Loaded">
-    <StackPanel>
-        <Label  Content="Name" HorizontalAlignment="Center" Margin="0,50,0,0"></Label>
-        <TextBox  Width="500" Name="textbox_name" Height="20" Margin="0,50,0,0" ></TextBox>
-        <Label  Content="Money" HorizontalAlignment="Center" Margin="0,50,0,0"></Label>
-        <TextBox  Width="500" Name="textbox_money" Height="20" Margin="0,50,0,0" ></TextBox>
+          TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+     TextOptions.TextRenderingMode="Auto"
 
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="add" Height="400" Width="800" Background="#FFD32D">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="MinHeight" Value="20"/>
+            <Setter Property="MinWidth" Value="250"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border"
+CornerRadius="2"
+BorderBrush="#000"
+BorderThickness="1"
+Background="#fff"
+>
+                            <ScrollViewer x:Name="PART_ContentHost"
+Focusable="false"
+HorizontalScrollBarVisibility="Hidden"
+VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#909090"/>
+                                <Setter Property="Foreground" Value="Red" />
+                                <Setter Property="FontWeight" Value="Bold" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="true">
+                                <Setter Property="Foreground" Value="Blue" />
+                                <Setter Property="BorderBrush" TargetName="border" Value="Blue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MyBorderStyle" TargetType="Border">
+            <Setter Property="BorderBrush" Value="White" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="CornerRadius" Value="3" />
+        </Style>
+    </Window.Resources>
+    <StackPanel >
+        <Label   Content="Name" HorizontalAlignment="Center" Margin="0,50,0,0"></Label>
+        <TextBox  Name="textbox_name"  Text="{Binding Deyisen.Name,UpdateSourceTrigger=PropertyChanged}"  ></TextBox>
+        <Label   Content="Money" HorizontalAlignment="Center" Margin="0,50,0,0"></Label>
+        <TextBox     Name="textbox_money"  Text="{Binding Deyisen.Money,UpdateSourceTrigger=PropertyChanged}" ></TextBox>
 
-        <Button Content="Edit" Name="btn_edit" Margin="0,200,0,0" Click="btn_edit_Click"     ></Button>
+        <!--<Grid>
+            <Button Background="#085E7D" 
+    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+Width="80"
+                     Margin="0,50,0,0"
+    materialDesign:ButtonAssist.CornerRadius="25"
+    ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"        Click="btn_edit_Click">
+                <TextBlock
+      Text="EDIT" />
+
+            </Button>
+        </Grid>-->
+
     </StackPanel>
 </Window>

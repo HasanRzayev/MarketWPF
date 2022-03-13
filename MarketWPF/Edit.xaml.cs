@@ -23,14 +23,14 @@ namespace MarketWPF
 
     public partial class Edit : Window, INotifyPropertyChanged
     {
-        private ObservableCollection<Product> sebet;
+        private Product deyisen;
 
-        public ObservableCollection<Product> Basket
+        public Product Deyisen
         {
-            get { return sebet; }
+            get { return deyisen; }
             set
             {
-                sebet = value;
+                deyisen = value;
                 OnPropertyChanged();
             }
         }
@@ -38,6 +38,7 @@ namespace MarketWPF
         public Edit()
         {
             InitializeComponent();
+            DataContext = this;
         }
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -48,35 +49,28 @@ namespace MarketWPF
 
         private void btn_edit_Click(object sender, RoutedEventArgs e)
         {
-            double numericValue;
-            bool isNumber = double.TryParse(textbox_money.Text, out numericValue);
-            if (isNumber == false) return;
-            foreach (var item in Basket)
-            {
+            //double numericValue;
+            //bool isNumber = double.TryParse(textbox_money.Text, out numericValue);
+            //if (isNumber == false) return;
+            //foreach (var item in Basket)
+            //{
                 
   
-                if (textbox_money.Text != null && textbox_name.Text != null )
-                {
-                    if (item.Name == lazim)
-                    {
+            //    if (textbox_money.Text != null && textbox_name.Text != null )
+            //    {
+            //        if (item.Name == lazim)
+            //        {
              
-                        item.Name = textbox_name.Text;
-                        item.Money = double.Parse(textbox_money.Text);
-                    }
-                }
-            }
+            //            item.Name = textbox_name.Text;
+            //            item.Money = double.Parse(textbox_money.Text);
+            //        }
+            //    }
+            //}
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            foreach (var item in Basket)
-            {
-                if (item.Name == lazim)
-                {
-                    textbox_name.Text = item.Name;
-                    textbox_money.Text = item.Money.ToString();
-                }
-            }
+            
         }
     }
 }
