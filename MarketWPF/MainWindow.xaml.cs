@@ -95,6 +95,9 @@ namespace MarketWPF
              
          
                 products.Add(new Product("Kola", 7.5, 10, "https://images.ctfassets.net/6jpeaipefazr/3B7rtjJ16H2X5l0CXcCC2H/9c3589ba77afca615b91cc43f55feee8/P2-5449000054227_T1.jpg?w=1080&h=1080"));
+                products.Add(new Product("Kola zero", 7.5, 10, "https://bellapizza.tj/wp-content/uploads/2018/02/cocacola-zero.jpg"));
+                products.Add(new Product("Lipton Peach ice tea", 7.5, 10, "https://www.luluhypermarket.com/medias/5403-04.jpg-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w1MDk5NjN8aW1hZ2UvanBlZ3xoY2MvaDRlLzk2ODI0OTM0MDcyNjIvNTQwMy0wNC5qcGdfMTIwMFd4MTIwMEh8NzlmMGY1NmI3ZTliNjRiN2IzNzU4YmI3NzNkZjMwZTM4NDkwY2VmMTY2MjMxYmNkZmFiNzI2MzQ1MGVmMWQwZA"));
+
                 products.Add(new Product("Fanta", 7.5, 10, "https://fulloption.com.ng/wp-content/uploads/2017/08/365.jpg"));
                 products.Add(new Product("Fanta Pineapple", 7.5, 10, "https://primaoffice.co.za/wp-content/uploads/2021/02/Fanta-Pineapple-Bottle-1-x-440ml.jpg"));
                 products.Add(new Product("Pepsi", 7.5, 10, "https://www.ubuy.com.jo/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNzFNN2xsUjJ3RkwuX1NMMTUwMF8uanBn.jpg"));
